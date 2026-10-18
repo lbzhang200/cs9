@@ -2,6 +2,8 @@ class Item:
     def __init__(self, upc = None, category = None, name = None, price = None):
         self.setUpc(upc)
         self.setCategory(category)
+        self.setName(name)
+        self.setPrice(price)
 
     def setUpc(self, upc):
         self.upc = upc 

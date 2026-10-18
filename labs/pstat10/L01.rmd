@@ -27,6 +27,9 @@ Compared to working in the R console, .Rmd allows you to rerun (reproduce) code 
 
 
 `r bfcolor("Exercise 1:", "blue")` **R as a calculator:** use any mathematical operators (+, -, /, and *) to create an expression and make sure it works as expected. _What is `2+2`, `100*3`, `100/10`, `sqrt(25)`?_
+```{r}
+2 + 2 
+```
 
 `r bfcolor("Solutions:", "blue")`
 
