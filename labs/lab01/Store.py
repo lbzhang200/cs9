@@ -16,6 +16,13 @@ class Store:
                 if itemList[i].upc == item.upc: 
                     itemList.pop(i)
                     return 
+    def removeItem(self, item):
+        for category in self.items:
+            itemList = self.items[category]
+            for i in range(len(itemList)):
+                if itemList[i].upc == item.upc:
+                    itemList.pop(i)
+                    return 
 
     def removeCategory(self, category):
         if category is not None:
@@ -44,6 +51,14 @@ class Store:
                 if item.price is not None and item.price <= 1: 
                     count += 1 
 
+        return count 
+
+    def countDollarITems(self):
+        count = 0 
+        for category in self.items:
+            for item in self.items[category]:
+                if item.price is not None and item.price <= 1:
+                    count += 1
         return count 
 
 

@@ -1,4 +1,4 @@
-from Item import Item
+from scrap.lab01new.Item import Item
 
 class Store:
     def __init__(self):
