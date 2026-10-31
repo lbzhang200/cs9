@@ -9,12 +9,11 @@ def solveMaze(maze, startX, startY):
     stack.push([startX, startY])
 
     while not stack.isEmpty():
-        current = stack.peep()
+        current = stack.peek()
         x = current[0]
         y = current[1] 
 
-        neighbors = [[x-1, y], [x+1, y], [x, y-1], [x, y+1]]
-
+        neighbors = [[x-1, y], [x, y-1], [x+1, y], [x, y+1]]
         moved = False 
         for pos in neighbors:
             nx = pos[0] 

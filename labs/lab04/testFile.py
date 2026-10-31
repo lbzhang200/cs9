@@ -12,7 +12,7 @@ def test_stack_push_peek_pop():
     s.push([1, 2,])
     assert s.size() == 2
     assert s.isEmpty() == False
-    assert s.pop() == [2, 3]
+    assert s.pop() == [1, 2]
     assert s.peek() == 1
     assert s.pop()== 1      
     assert s.isEmpty() == True 
@@ -38,7 +38,7 @@ def test_example():
         ['+', ' ', '+', '+', ' ', '+'],
         ['+', ' ', ' ', ' ', ' ', '+'],
         ['+', '+', '+', '+', '+', '+']]
-    assert solveMAze(maze, 4, 4) == True
+    assert solveMaze(maze, 4, 4) == True
     assert maze == [
         ['+', '+', '+', '+', 'G', '+'],
         ['+', 8, '+', 11, 12, '+'],
