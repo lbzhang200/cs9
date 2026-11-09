@@ -1,21 +1,27 @@
-from Stack import Stack 
-from lab04 import solveMaze 
+from Stack import Stack
+from lab04 import *
+
+
+#stack tests 
 
 def test_stack_empty():
-    s = Stack() 
-    assert s.isEmpty() == True 
-    assert s.size() == 0 
+    s = Stack()
+    assert s.isEmpty() == True
+    assert s.size() == 0
+
 
 def test_stack_push_peek_pop():
     s = Stack()
     s.push(1)
-    s.push([1, 2,])
+    s.push([2, 3])
     assert s.size() == 2
     assert s.isEmpty() == False
-    assert s.pop() == [1, 2]
+    assert s.peek() == [2, 3]
+    assert s.pop() == [2, 3]
     assert s.peek() == 1
-    assert s.pop()== 1      
-    assert s.isEmpty() == True 
+    assert s.pop() == 1
+    assert s.isEmpty() == True
+
 
 def test_stack_lifo_order():
     s = Stack()
@@ -26,9 +32,7 @@ def test_stack_lifo_order():
         result.append(s.pop())
     assert result == [4, 3, 2, 1, 0]
 
-
-
-#solve maze tests 
+#solve maze tests
 
 def test_example():
     maze = [
@@ -46,8 +50,8 @@ def test_example():
         ['+', 6, '+', '+', 2, '+'],
         ['+', 5, 4, 3, 1, '+'],
         ['+', '+', '+', '+', '+', '+']]
- 
- 
+
+
 def test_start_next_to_goal_north():
     maze = [
         ['+', 'G', '+'],
@@ -58,8 +62,8 @@ def test_start_next_to_goal_north():
         ['+', 'G', '+'],
         ['+', 1, '+'],
         ['+', '+', '+']]
- 
- 
+
+
 def test_goal_to_the_east():
     maze = [
         ['+', '+', '+', '+'],
@@ -70,8 +74,8 @@ def test_goal_to_the_east():
         ['+', '+', '+', '+'],
         ['+', 1, 2, 'G'],
         ['+', '+', '+', '+']]
- 
- 
+
+
 def test_goal_to_the_south():
     maze = [
         ['+', '+', '+'],
@@ -84,8 +88,8 @@ def test_goal_to_the_south():
         ['+', 1, '+'],
         ['+', 2, '+'],
         ['+', 'G', '+']]
- 
- 
+
+
 def test_goal_to_the_west():
     maze = [
         ['+', '+', '+', '+'],
@@ -96,8 +100,8 @@ def test_goal_to_the_west():
         ['+', '+', '+', '+'],
         ['G', 2, 1, '+'],
         ['+', '+', '+', '+']]
- 
- 
+
+
 def test_no_path():
     maze = [
         ['+', '+', '+', '+', '+'],
@@ -110,8 +114,8 @@ def test_no_path():
         ['+', 1, '+', ' ', 'G'],
         ['+', 2, '+', ' ', '+'],
         ['+', '+', '+', '+', '+']]
- 
- 
+
+
 def test_no_path_single_cell():
     maze = [
         ['+', '+', '+'],
@@ -122,10 +126,9 @@ def test_no_path_single_cell():
         ['+', '+', '+'],
         ['+', 1, '+'],
         ['+', '+', '+']]
- 
- 
+
+
 def test_backtracking_dead_end():
-    # Goes north into a dead end first, backtracks, then heads east to G
     maze = [
         ['+', '+', '+', '+', '+'],
         ['+', ' ', '+', '+', '+'],

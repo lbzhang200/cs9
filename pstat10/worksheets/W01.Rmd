@@ -50,7 +50,6 @@ There are many built-in functions to make calculations easier. For example, calc
 **(a)** Calculate $\displaystyle \sqrt{ \frac{3^{0.527}}{1 + \ln\left( \frac{11}{3} \right)}  }$
 
 `r bfcolor("Solutions:", "blue")`
-
 $\displaystyle \sqrt{ \frac{3^{0.527}}{1 + \ln\left( \frac{11}{3} \right)}  }$
 
 **(b)** Calculate $\displaystyle \frac{1}{1 + \frac{2}{1 + \frac{3}{1 + 4}}}$
