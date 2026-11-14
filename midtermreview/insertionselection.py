@@ -103,3 +103,32 @@ def insertionSort(aList):
 
         if found == True and previous != None:
             previous.setNext(current.getNext())
+
+
+#merge sort and quick sort 
+
+#merge sort
+
+#o(logn), subdivide until size == 1 
+
+def mergesort(alist):
+    if len(alist) > 1:
+        mid = len(alist) // 2
+
+
+    lefthalf = alist[:mid]
+    righthalf = alist[mid:]
+
+    mergesort(lefthalf)
+    mergesort(righthalf)
+
+    i = 0 #index for lefthalf sublist 
+    j = 0 #index for righthalf sublist
+    k = 0 #index for alist 
+
+
+    while i < len(lefthalf) and j < len(righthalf):
+        if lefthalf[i] <= righthalf[j]:
+            i = i + 1
+        else:
+            alist[k] = righthalf[j] 
